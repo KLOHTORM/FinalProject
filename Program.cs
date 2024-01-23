@@ -4,3 +4,31 @@
 пользоваться коллекциями, лучше обойтись исключительно массивами.
 */
 
+int[] GetArray(int size)
+{
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(0, 9999);
+    }
+    return array;
+}
+
+void PrintArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        System.Console.Write(arr[i]);
+        if (i < arr.Length)
+        {
+            System.Console.Write(", ");
+        }
+    }
+
+}
+
+System.Console.Write("Введите размер массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+int[] userArr = GetArray(size);
+PrintArray(userArr);
